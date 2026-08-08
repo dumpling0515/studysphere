@@ -1,4 +1,4 @@
-# Meridian Academy — Landing Page
+# Studysphere — Landing Page
 
 A single-file static site (`index.html`) — no build step, no dependencies to install.
 
