@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studysphere — Best Tutoring Services at your doorstep</title>
-<meta name="description" content="Studysphere is a project-based academy where skills are engineered, module by module, into mastery.">
+<title>Studysphere — Affordable Tutoring from UBC's Top Students</title>
+<meta name="description" content="Studysphere connects K-12 and university students with high-GPA UBC tutors for affordable, personalized tutoring that delivers real results.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -199,10 +199,10 @@
   .principle p{ color: var(--parchment-dim); font-size: 14.5px; }
   @media (max-width: 800px){ .principles{ grid-template-columns: 1fr; } }
 
-  /* ---------- Curriculum blueprint ---------- */
-  .curriculum-diagram{ margin-bottom: 70px; }
-  .modules{ display:flex; flex-direction:column; }
-  .module{
+  /* ---------- Service blueprint ---------- */
+  .service-diagram{ margin-bottom: 70px; }
+  .levels{ display:flex; flex-direction:column; }
+  .level{
     display:grid;
     grid-template-columns: 90px 1fr auto;
     gap: 28px;
@@ -211,17 +211,17 @@
     border-top: 1px solid var(--line);
     position: relative;
   }
-  .module:last-child{ border-bottom: 1px solid var(--line); }
-  .module .idx{
+  .level:last-child{ border-bottom: 1px solid var(--line); }
+  .level .idx{
     font-family:'IBM Plex Mono', monospace;
     font-size: 13px;
     color: var(--brass);
     padding-top: 4px;
   }
-  .module .idx .sub{ display:block; color: var(--slate); font-size: 11px; margin-top: 3px; }
-  .module h3{ font-size: 22px; font-weight: 600; margin-bottom: 8px; }
-  .module p{ color: var(--parchment-dim); font-size: 14.5px; max-width: 56ch; }
-  .module .tag{
+  .level .idx .sub{ display:block; color: var(--slate); font-size: 11px; margin-top: 3px; }
+  .level h3{ font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+  .level p{ color: var(--parchment-dim); font-size: 14.5px; max-width: 56ch; }
+  .level .tag{
     font-family:'IBM Plex Mono', monospace;
     font-size: 11px;
     color: var(--slate);
@@ -232,11 +232,11 @@
     text-align: right;
   }
   @media (max-width: 720px){
-    .module{ grid-template-columns: 50px 1fr; }
-    .module .tag{ grid-column: 2; text-align:left; padding-top:0; }
+    .level{ grid-template-columns: 50px 1fr; }
+    .level .tag{ grid-column: 2; text-align:left; padding-top:0; }
   }
 
-  /* ---------- Skill-tree signature diagram ---------- */
+  /* ---------- Learning path diagram ---------- */
   .diagram-frame{
     border: 1px solid var(--line);
     background: var(--panel);
@@ -263,10 +263,10 @@
   .node-dot{ opacity: 0; transform: scale(0.5); transform-origin: center; transition: opacity .5s ease, transform .5s ease; }
   .node-dot.in-view{ opacity: 1; transform: scale(1); }
 
-  /* ---------- Mentors ---------- */
-  .mentors{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-  .mentor{ border-top: 1px solid var(--line); padding-top: 24px; }
-  .mentor .initials{
+  /* ---------- Tutors ---------- */
+  .tutors{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .tutor{ border-top: 1px solid var(--line); padding-top: 24px; }
+  .tutor .initials{
     width: 50px; height: 50px;
     border: 1px solid var(--brass);
     color: var(--brass);
@@ -275,10 +275,10 @@
     display:flex; align-items:center; justify-content:center;
     margin-bottom: 20px;
   }
-  .mentor h3{ font-size: 17px; margin-bottom: 4px; }
-  .mentor .role{ font-family:'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--brass); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 14px; }
-  .mentor p{ color: var(--parchment-dim); font-size: 14px; }
-  @media (max-width: 800px){ .mentors{ grid-template-columns: 1fr; gap: 32px; } }
+  .tutor h3{ font-size: 17px; margin-bottom: 4px; }
+  .tutor .role{ font-family:'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--brass); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 14px; }
+  .tutor p{ color: var(--parchment-dim); font-size: 14px; }
+  @media (max-width: 800px){ .tutors{ grid-template-columns: 1fr; gap: 32px; } }
 
   /* ---------- Pricing / CTA ---------- */
   .cta-panel{
@@ -318,16 +318,16 @@
 <header>
   <div class="wrap">
     <a href="#top" class="logo">
-      <span class="mark"><span>M</span></span>
+      <span class="mark"><span>S</span></span>
       Studysphere
     </a>
     <nav class="desktop-nav" style="display:flex;">
-      <a href="#philosophy">Philosophy</a>
-      <a href="#curriculum">Curriculum</a>
-      <a href="#mentors">Mentors</a>
-      <a href="#enroll">Enroll</a>
+      <a href="#approach">Approach</a>
+      <a href="#services">Services</a>
+      <a href="#tutors">Tutors</a>
+      <a href="#book">Book Session</a>
     </nav>
-    <a href="#enroll" class="btn">Begin Assessment</a>
+    <a href="#book" class="btn">Free Assessment</a>
   </div>
 </header>
 
@@ -336,60 +336,60 @@
   <section class="hero" style="border-top:none; padding-top:140px;">
     <div class="grid-bg"></div>
     <div class="wrap hero-inner">
-      <div class="eyebrow">Studysphere Academy — Est. Cohort 001</div>
-      <h1>Mastery isn't taught. <em>It's drafted, then built.</em></h1>
-      <p class="lede">At Studysphere, we believe every student deserves access to exceptional guidance. 
-        That's why we partner with high-achieving UBC students to offer affordable, university-quality tutoring for all levels, from K-12 to post-secondary. 
-        Unlock your full potential with mentors who know what it takes to succeed.</p>
+      <div class="eyebrow">Studysphere Tutoring — UBC Student-Led</div>
+      <h1>Top-tier tutoring. <em>Affordable for everyone.</em></h1>
+      <p class="lede">Studysphere connects K-12 and university students with high-achieving UBC students.
+        Our tutors hold exceptional GPAs, know exactly what it takes to succeed, and deliver personalized support at a price that makes sense.
+        No fancy overhead — just real expertise from people who’ve been in your seat.</p>
       <div class="hero-ctas">
-        <a href="#enroll" class="btn filled">Start the Assessment</a>
-        <a href="#curriculum" class="btn">View the Curriculum</a>
-        <span class="note">14-day trial · no card required</span>
+        <a href="#book" class="btn filled">Book a Free Trial</a>
+        <a href="#services" class="btn">View All Subjects</a>
+        <span class="note">First session free · no commitment</span>
       </div>
       <div class="hero-stats">
-        <div><div class="num">6</div><div class="label">Tracks Live</div></div>
-        <div><div class="num">340h</div><div class="label">Avg. to Mastery</div></div>
-        <div><div class="num">92%</div><div class="label">Ship a Final Build</div></div>
+        <div><div class="num">20+</div><div class="label">Subjects Covered</div></div>
+        <div><div class="num">3.8+</div><div class="label">Avg. Tutor GPA</div></div>
+        <div><div class="num">94%</div><div class="label">Student Grade Improvement</div></div>
       </div>
     </div>
   </section>
 
-  <section id="philosophy">
+  <section id="approach">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Philosophy</div>
-        <h2>Three principles, no exceptions.</h2>
-        <p>Most courses optimize for completion. We optimize for the moment a skill becomes reliable under pressure.</p>
+        <div class="eyebrow">Our Approach</div>
+        <h2>Three pillars, no shortcuts.</h2>
+        <p>Most tutoring agencies charge premium prices for inconsistent results. We built Studysphere differently — for students, by students.</p>
       </div>
       <div class="principles reveal">
         <div class="principle">
           <svg class="glyph" viewBox="0 0 34 34" fill="none"><rect x="1" y="1" width="32" height="32" stroke="#C9A227" stroke-width="1.2"/><path d="M9 17h16M17 9v16" stroke="#C9A227" stroke-width="1.2"/></svg>
-          <h3>Build, don't watch</h3>
-          <p>No lecture exceeds twelve minutes. Everything past that is a project brief with a deadline and a reviewer.</p>
+          <h3>UBC-calibre tutors</h3>
+          <p>Every tutor is a current UBC student with a proven high GPA, selected for subject mastery and the ability to explain ideas clearly.</p>
         </div>
         <div class="principle">
           <svg class="glyph" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="12" stroke="#C9A227" stroke-width="1.2"/><circle cx="17" cy="17" r="3" fill="#C9A227"/></svg>
-          <h3>Feedback within 48h</h3>
-          <p>A mentor who has shipped the skill you're learning reviews every submission — line notes, not letter grades.</p>
+          <h3>Truly affordable rates</h3>
+          <p>We cut out agency markup and corporate overhead. You get university-level expertise at a fraction of the standard tutoring price.</p>
         </div>
         <div class="principle">
           <svg class="glyph" viewBox="0 0 34 34" fill="none"><path d="M4 26L17 5l13 21H4z" stroke="#C9A227" stroke-width="1.2" stroke-linejoin="round"/></svg>
-          <h3>The floor rises with you</h3>
-          <p>Each module locks the last one's standard in. You can't pass a build sloppier than the one before it.</p>
+          <h3>Built around you</h3>
+          <p>Every session is tailored to your goals, pace, and learning style. We target gaps first, not a one-size-fits-all curriculum.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="curriculum">
+  <section id="services">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Curriculum</div>
-        <h2>The Systems Design track, module by module.</h2>
-        <p>One of six live tracks. Each module is a real build reviewed against a fixed rubric before you advance.</p>
+        <div class="eyebrow">Our Services</div>
+        <h2>Support for every level, from Grade 1 to University.</h2>
+        <p>Three core service tracks, all taught by UBC high-achievers. Pick your level and we match you with the right tutor.</p>
       </div>
 
-      <div class="curriculum-diagram reveal">
+      <div class="service-diagram reveal">
         <div class="diagram-frame">
           <svg id="skill-svg" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
             <line x1="60" y1="110" x2="840" y2="110" stroke="#5B6B76" stroke-width="1" stroke-dasharray="2 6"/>
@@ -399,91 +399,76 @@
             <path class="draw-path" d="M540,70 L700,130" stroke="#C9A227" stroke-width="1.4" fill="none"/>
             <path class="draw-path" d="M700,130 L840,90" stroke="#C9A227" stroke-width="1.4" fill="none"/>
 
-            <g class="node-dot"><circle cx="60" cy="110" r="5" fill="#0B0D10" stroke="#C9A227" stroke-width="1.4"/><text x="60" y="140" fill="#A7A196" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">01</text></g>
-            <g class="node-dot"><circle cx="220" cy="60" r="5" fill="#0B0D10" stroke="#C9A227" stroke-width="1.4"/><text x="220" y="42" fill="#A7A196" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">02</text></g>
-            <g class="node-dot"><circle cx="380" cy="150" r="5" fill="#0B0D10" stroke="#C9A227" stroke-width="1.4"/><text x="380" y="180" fill="#A7A196" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">03</text></g>
-            <g class="node-dot"><circle cx="540" cy="70" r="5" fill="#0B0D10" stroke="#C9A227" stroke-width="1.4"/><text x="540" y="52" fill="#A7A196" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">04</text></g>
-            <g class="node-dot"><circle cx="700" cy="130" r="5" fill="#0B0D10" stroke="#C9A227" stroke-width="1.4"/><text x="700" y="160" fill="#A7A196" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">05</text></g>
-            <g class="node-dot"><circle cx="840" cy="90" r="6.5" fill="#C9A227"/><text x="840" y="70" fill="#C9A227" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">FINAL</text></g>
+            <g class="node-dot"><circle cx="60" cy="110" r="5" fill="#0B0D10" stroke="#C9A227" stroke-width="1.4"/><text x="60" y="140" fill="#A7A196" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">K-12</text></g>
+            <g class="node-dot"><circle cx="220" cy="60" r="5" fill="#0B0D10" stroke="#C9A227" stroke-width="1.4"/><text x="220" y="42" fill="#A7A196" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">IGCSE</text></g>
+            <g class="node-dot"><circle cx="380" cy="150" r="5" fill="#0B0D10" stroke="#C9A227" stroke-width="1.4"/><text x="380" y="180" fill="#A7A196" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">AP / IB</text></g>
+            <g class="node-dot"><circle cx="540" cy="70" r="5" fill="#0B0D10" stroke="#C9A227" stroke-width="1.4"/><text x="540" y="52" fill="#A7A196" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">First Year</text></g>
+            <g class="node-dot"><circle cx="700" cy="130" r="5" fill="#0B0D10" stroke="#C9A227" stroke-width="1.4"/><text x="700" y="160" fill="#A7A196" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">Upper Year</text></g>
+            <g class="node-dot"><circle cx="840" cy="90" r="6.5" fill="#C9A227"/><text x="840" y="70" fill="#C9A227" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">Mastery</text></g>
           </svg>
-          <div class="diagram-caption"><span>FIG. 01 — MASTERY PATH</span><span>SYSTEMS DESIGN TRACK</span></div>
+          <div class="diagram-caption"><span>FIG. 01 — LEARNING PATH</span><span>FULL ACADEMIC CONTINUUM</span></div>
         </div>
       </div>
 
-      <div class="modules reveal">
-        <div class="module">
-          <div class="idx">01 <span class="sub">Wk 1–2</span></div>
-          <div><h3>Foundations & Failure Modes</h3><p>Design a small system on paper, then break it on purpose. You'll leave knowing exactly where your assumptions were wrong.</p></div>
-          <div class="tag">Build · Reviewed</div>
+      <div class="levels reveal">
+        <div class="level">
+          <div class="idx">01 <span class="sub">Grades 1–12</span></div>
+          <div><h3>K-12 Academic Tutoring</h3><p>Math, science, English, and more — built around school curricula and exam prep. We strengthen fundamentals, build confidence, and target weak spots before they become gaps.</p></div>
+          <div class="tag">All Subjects</div>
         </div>
-        <div class="module">
-          <div class="idx">02 <span class="sub">Wk 3–4</span></div>
-          <div><h3>Interfaces & Contracts</h3><p>Define the boundary between two components before either exists. Your contract gets implemented by a partner cohort — sight unseen.</p></div>
-          <div class="tag">Pair Build</div>
+        <div class="level">
+          <div class="idx">02 <span class="sub">Grades 9–12</span></div>
+          <div><h3>IGCSE / AP / IB Exam Prep</h3><p>Targeted preparation for international and advanced high school exams. Our tutors scored top marks themselves and know exactly how to study efficiently for these tests.</p></div>
+          <div class="tag">Exam Focused</div>
         </div>
-        <div class="module">
-          <div class="idx">03 <span class="sub">Wk 5–7</span></div>
-          <div><h3>Load, Latency & Limits</h3><p>Take a working system and find where it bends. Instrument it, load-test it, and rebuild the part that gives way first.</p></div>
-          <div class="tag">Build · Reviewed</div>
-        </div>
-        <div class="module">
-          <div class="idx">04 <span class="sub">Wk 8–9</span></div>
-          <div><h3>Migrations Without Downtime</h3><p>Ship a breaking change to a live system with users on it. The rubric only cares whether anyone noticed.</p></div>
-          <div class="tag">Live Simulation</div>
-        </div>
-        <div class="module">
-          <div class="idx">05 <span class="sub">Wk 10</span></div>
-          <div><h3>The Postmortem</h3><p>You'll be handed a system that failed in production. Diagnose it, write the postmortem, and propose the fix — in that order.</p></div>
-          <div class="tag">Case Study</div>
-        </div>
-        <div class="module">
-          <div class="idx">FIN <span class="sub">Wk 11–14</span></div>
-          <div><h3>Final Build: Design a System From Scratch</h3><p>Solo project, mentor-reviewed twice, defended in a 30-minute review panel. This is what goes in your portfolio.</p></div>
-          <div class="tag">Capstone</div>
+        <div class="level">
+          <div class="idx">03 <span class="sub">Undergrad</span></div>
+          <div><h3>University Course Support</h3><p>First-year math, chemistry, physics, biology, economics, and more. Get walkthroughs of tough concepts, assignment help, and midterm/final prep from students who aced the same courses.</p></div>
+          <div class="tag">UBC-Aligned</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="mentors">
+  <section id="tutors">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Mentors</div>
-        <h2>Reviewed by people who've shipped it.</h2>
-        <p>Every mentor still works in the field they teach. No career instructors — only practitioners on a teaching rotation.</p>
+        <div class="eyebrow">Our Tutors</div>
+        <h2>Taught by students who topped the class.</h2>
+        <p>Every tutor is handpicked from UBC’s highest-achieving students. They don’t just know the material — they know how to teach it.</p>
       </div>
-      <div class="mentors reveal">
-        <div class="mentor">
-          <div class="initials">R.O.</div>
-          <h3>Renata Osei</h3>
-          <div class="role">Systems Design Lead</div>
-          <p>Twelve years designing infrastructure for payment platforms at scale. Reviews the Systems Design and Migrations modules.</p>
+      <div class="tutors reveal">
+        <div class="tutor">
+          <div class="initials">J.L.</div>
+          <h3>Jessica Liu</h3>
+          <div class="role">Chemistry & Math Tutor</div>
+          <p>Third-year Chemistry major with a 3.95 GPA. Specializes in IGCSE, AP Chemistry, and first-year university chemistry courses.</p>
         </div>
-        <div class="mentor">
-          <div class="initials">D.K.</div>
-          <h3>David Kwan</h3>
-          <div class="role">Interfaces Mentor</div>
-          <p>Built the API layer used by three Series-B startups before joining Studysphere's mentor rotation part-time.</p>
+        <div class="tutor">
+          <div class="initials">A.P.</div>
+          <h3>Arjun Patel</div>
+          <div class="role">Mathematics Tutor</div>
+          <p>Computer Science and Math double major. Tutors everything from Grade 8 math to second-year calculus and linear algebra.</p>
         </div>
-        <div class="mentor">
-          <div class="initials">S.A.</div>
-          <h3>Sable Anders</h3>
-          <div class="role">Postmortem Reviewer</div>
-          <p>Runs incident response for a logistics network. Teaches the Postmortem module from real, redacted case files.</p>
+        <div class="tutor">
+          <div class="initials">E.W.</div>
+          <h3>Emma Wong</div>
+          <div class="role">Biology & Sciences Tutor</div>
+          <p>Life Sciences student on the Dean’s List. Experienced in K-12 science and first-year university biology tutoring.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="enroll">
+  <section id="book">
     <div class="wrap">
       <div class="cta-panel reveal">
-        <div class="eyebrow" style="justify-content:center;">Admissions Open — Cohort 002</div>
-        <h2>Assessment before enrollment. Always.</h2>
-        <p>We start with a 20-minute diagnostic build, not a form. It tells us where your track begins — and tells you whether Studysphere is worth your 340 hours.</p>
+        <div class="eyebrow" style="justify-content:center;">Free Trial Session — Limited Spots</div>
+        <h2>Start with a free assessment, not a sales call.</h2>
+        <p>We begin with a 30-minute diagnostic session to understand your goals, match you with the right tutor, and build a personalized plan. No pressure, no hidden fees.</p>
         <div class="cta-row">
-          <a href="#" class="btn filled">Start the Assessment</a>
-          <a href="#curriculum" class="btn">Review the Curriculum Again</a>
+          <a href="#" class="btn filled">Book Free Trial</a>
+          <a href="#services" class="btn">See All Subjects</a>
         </div>
       </div>
     </div>
@@ -494,16 +479,16 @@
 <footer>
   <div class="wrap">
     <a href="#top" class="logo" style="font-size:16px;">
-      <span class="mark" style="width:18px;height:18px;"><span style="font-size:9px;">M</span></span>
+      <span class="mark" style="width:18px;height:18px;"><span style="font-size:9px;">S</span></span>
       Studysphere
     </a>
     <nav>
-      <a href="#philosophy">Philosophy</a>
-      <a href="#curriculum">Curriculum</a>
-      <a href="#mentors">Mentors</a>
-      <a href="#enroll">Enroll</a>
+      <a href="#approach">Approach</a>
+      <a href="#services">Services</a>
+      <a href="#tutors">Tutors</a>
+      <a href="#book">Book Session</a>
     </nav>
-    <div class="fine">© 2026 Studysphere Academy</div>
+    <div class="fine">© 2026 Studysphere Tutoring</div>
   </div>
 </footer>
 
