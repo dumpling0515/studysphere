@@ -265,13 +265,13 @@
   .node-dot{ opacity: 0; transform: scale(0.5); transform-origin: center; transition: opacity .5s ease, transform .5s ease; }
   .node-dot.in-view{ opacity: 1; transform: scale(1); }
 
-  /* ---------- Tutor Slideshow ---------- */
+  /* ---------- Tutor Slideshow & Card ---------- */
   .slideshow-card {
     border: 1px solid var(--line);
     background: var(--panel);
     padding: 48px;
     position: relative;
-    max-width: 860px;
+    max-width: 980px;
     margin: 0 auto;
   }
   .slideshow-card::before, .slideshow-card::after {
@@ -297,26 +297,54 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .tutor-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 24px;
+  /* Two-column layout: Picture on left, Details on right */
+  .tutor-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    align-items: start;
   }
-  .tutor-header .initials {
-    width: 58px;
-    height: 58px;
-    border: 1px solid var(--brass);
-    color: var(--brass);
-    font-family: 'Fraunces', serif;
-    font-size: 20px;
+
+  /* Photo box frame */
+  .tutor-photo-wrap {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border: 1px solid var(--line);
+    background: var(--ink-black);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .tutor-photo-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px dashed rgba(201, 162, 39, 0.35);
+    pointer-events: none;
+  }
+  .tutor-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .tutor-photo-placeholder {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    color: var(--brass);
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+  }
+
+  .tutor-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
   }
   .tutor-header h3 {
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 4px;
   }
   .tutor-header .role {
@@ -334,11 +362,11 @@
     margin-bottom: 14px;
   }
 
-  .tutor-body .tutor-subjects {
+  .tutor-subjects {
     margin-top: 24px;
     padding: 16px 20px;
     border: 1px solid var(--line);
-    background: rgba(11,13,16,0.5);
+    background: rgba(11,13,16,0.6);
     font-size: 14px;
     line-height: 1.6;
   }
@@ -371,7 +399,9 @@
     gap: 12px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    .tutor-grid { grid-template-columns: 1fr; gap: 24px; }
+    .tutor-photo-wrap { max-width: 220px; margin: 0 auto; }
     .slideshow-card { padding: 28px 20px; }
     .slideshow-nav { flex-direction: column; gap: 16px; }
   }
@@ -536,207 +566,79 @@
 
       <div class="slideshow-card reveal">
         <div class="tutor-slide active">
-          <div class="tutor-header">
-            <div class="initials">B.C.</div>
-            <div>
-              <h3>Benedict Chao</h3>
-              <div class="role">Tutor — BSc Chemistry (2nd Year)</div>
+          <div class="tutor-grid">
+            <div class="tutor-photo-wrap">
+              <div class="tutor-photo-placeholder">B.C.</div>
             </div>
-          </div>
-          <div class="tutor-body">
-            <p>Benedict Chao is a second-year student majoring in Chemistry at the University of British Columbia. When teaching, Benedict focuses on identifying and mastering core concepts rather than surface memorization, reinforcing understanding through dedicated practice sets.</p>
-            <p>He has extensive experience tutoring high school students and brings genuine enthusiasm for learning and mentorship. When not in the classroom or lab, Benedict enjoys running, cycling, reading, and hiking.</p>
-            <div class="tutor-subjects">
-              <span>Subjects Tutored</span>
-              Chemistry, High School Sciences, General Math
-            </div>
-          </div>
-        </div>
-
-        <div class="tutor-slide">
-          <div class="tutor-header">
-            <div class="initials">Y.H.</div>
-            <div>
-              <h3>Yangming Huang</h3>
-              <div class="role">Tutor — BSc Integrated Sciences (2nd Year)</div>
-            </div>
-          </div>
-          <div class="tutor-body">
-            <p>Yang Ming is a second-year student at the University of British Columbia working towards his BSc in Integrated Sciences. Outside of academics, he enjoys hiking throughout the mountains of the Lower Mainland and the Fraser Valley.</p>
-            <p>Yang Ming has worked with UBC Geering Up Engineering Outreach, delivering hands-on STEM curriculum to youth across various summer camps. He firmly believes practice makes perfect, and patiently ensures students gain authentic confidence in complex topics before moving ahead.</p>
-            <div class="tutor-subjects">
-              <span>Subjects Tutored</span>
-              Math K–10, Pre-Calculus 11/12, Calculus 12, AP Calculus AB, Elementary Science, Science 8–10, Biology 11–12, Chemistry 11–12, Physics 11, BIOL 112, BIOL 121, CHEM 141
+            <div class="tutor-content">
+              <div class="tutor-header">
+                <h3>Benedict Chao</h3>
+                <div class="role">Tutor — BSc Chemistry (2nd Year)</div>
+              </div>
+              <div class="tutor-body">
+                <p>Benedict Chao is a second-year student majoring in Chemistry at the University of British Columbia. When tutoring, Benedict prioritizes understanding the foundational concepts behind every problem, backing that up with structured, hands-on practice.</p>
+                <p>Having tutored students throughout high school, he brings both patience and passion to each session. Outside academics, Benedict spends his time running, cycling, reading, and exploring trails on the Lower Mainland.</p>
+                <div class="tutor-subjects">
+                  <span>Subjects Tutored</span>
+                  Chemistry 11–12, General Sciences, Pre-Calculus & Foundations Math
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="tutor-slide">
-          <div class="tutor-header">
-            <div class="initials">E.C.</div>
-            <div>
-              <h3>Eric Chen</h3>
-              <div class="role">Tutor</div>
+          <div class="tutor-grid">
+            <div class="tutor-photo-wrap">
+              <div class="tutor-photo-placeholder">Y.H.</div>
             </div>
-          </div>
-          <div class="tutor-body">
-            <p>Profile and subject offerings coming soon.</p>
+            <div class="tutor-content">
+              <div class="tutor-header">
+                <h3>Yangming Huang</h3>
+                <div class="role">Tutor — BSc Integrated Sciences (2nd Year)</div>
+              </div>
+              <div class="tutor-body">
+                <p>Yang Ming is a second-year student at the University of British Columbia working towards his BSc in Integrated Sciences. Outside of academics, he enjoys hiking in mountains around the Lower Mainland and the Fraser Valley.</p>
+                <p>Yang Ming has worked with UBC Geering Up Engineering Outreach, delivering hands-on STEM curriculum to youth across various summer camps. He believes practice makes perfect, and takes the time needed for students to build genuine mastery over difficult material.</p>
+                <div class="tutor-subjects">
+                  <span>Subjects Tutored</span>
+                  Math K–10, Pre-Calculus 11/12, Calculus 12, AP Calculus AB, Science 8–10, Biology 11–12, Chemistry 11–12, Physics 11, BIOL 112, BIOL 121, CHEM 141
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="tutor-slide">
-          <div class="tutor-header">
-            <div class="initials">J.L.</div>
-            <div>
-              <h3>Jet Liao</h3>
-              <div class="role">Tutor</div>
+          <div class="tutor-grid">
+            <div class="tutor-photo-wrap">
+              <div class="tutor-photo-placeholder">E.C.</div>
             </div>
-          </div>
-          <div class="tutor-body">
-            <p>Profile and subject offerings coming soon.</p>
+            <div class="tutor-content">
+              <div class="tutor-header">
+                <h3>Eric Chen</h3>
+                <div class="role">Tutor</div>
+              </div>
+              <div class="tutor-body">
+                <p>Profile and subject details coming soon.</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="tutor-slide">
-          <div class="tutor-header">
-            <div class="initials">K.T.</div>
-            <div>
-              <h3>Kenny Tran</h3>
-              <div class="role">Tutor</div>
+          <div class="tutor-grid">
+            <div class="tutor-photo-wrap">
+              <div class="tutor-photo-placeholder">J.L.</div>
+            </div>
+            <div class="tutor-content">
+              <div class="tutor-header">
+                <h3>Jet Liao</h3>
+                <div class="role">Tutor</div>
+              </div>
+              <div class="tutor-body">
+                <p>Profile and subject details coming soon.</p>
+              </div>
             </div>
           </div>
-          <div class="tutor-body">
-            <p>Profile and subject offerings coming soon.</p>
-          </div>
         </div>
-
-        <div class="tutor-slide">
-          <div class="tutor-header">
-            <div class="initials">M.W.</div>
-            <div>
-              <h3>Murtaza Wasim</h3>
-              <div class="role">Tutor</div>
-            </div>
-          </div>
-          <div class="tutor-body">
-            <p>Profile and subject offerings coming soon.</p>
-          </div>
-        </div>
-
-        <div class="tutor-slide">
-          <div class="tutor-header">
-            <div class="initials">S.M.</div>
-            <div>
-              <h3>Sean Miao</h3>
-              <div class="role">Tutor</div>
-            </div>
-          </div>
-          <div class="tutor-body">
-            <p>Profile and subject offerings coming soon.</p>
-          </div>
-        </div>
-
-        <div class="tutor-slide">
-          <div class="tutor-header">
-            <div class="initials">T.T.</div>
-            <div>
-              <h3>Tegvir Toor</h3>
-              <div class="role">Tutor</div>
-            </div>
-          </div>
-          <div class="tutor-body">
-            <p>Profile and subject offerings coming soon.</p>
-          </div>
-        </div>
-
-        <div class="slideshow-nav">
-          <span class="slide-counter" id="slide-counter">01 / 08</span>
-          <div class="slide-buttons">
-            <button type="button" class="btn" onclick="prevTutor()">❮ Prev</button>
-            <button type="button" class="btn" onclick="nextTutor()">Next ❯</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="book">
-    <div class="wrap">
-      <div class="cta-panel reveal">
-        <div class="eyebrow" style="justify-content:center;">Free Trial Session — Limited Spots</div>
-        <h2>Start with a free assessment, not a sales call.</h2>
-        <p>We begin with a 30-minute diagnostic session to understand your goals, match you with the right tutor, and build a personalized plan. No pressure, no hidden fees.</p>
-        <div class="cta-row">
-          <a href="#" class="btn filled">Book Free Trial</a>
-          <a href="#services" class="btn">See All Subjects</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <a href="#top" class="logo" style="font-size:16px;">
-      <span class="mark" style="width:18px;height:18px;"><span style="font-size:9px;">S</span></span>
-      Studysphere
-    </a>
-    <nav>
-      <a href="#approach">Approach</a>
-      <a href="#services">Services</a>
-      <a href="#tutors">Tutors</a>
-      <a href="#book">Book Session</a>
-    </nav>
-    <div class="fine">© 2026 Studysphere Tutoring</div>
-  </div>
-</footer>
-
-<script>
-  // Intersection Observers
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  const drawIo = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting){
-        document.querySelectorAll('.draw-path, .node-dot').forEach((el, i) => {
-          setTimeout(() => el.classList.add('in-view'), i * 90);
-        });
-        drawIo.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-  const svgFrame = document.querySelector('.diagram-frame');
-  if (svgFrame) drawIo.observe(svgFrame);
-
-  // Tutor Slideshow Logic
-  let currentSlide = 0;
-  const tutorSlides = document.querySelectorAll('.tutor-slide');
-  const counterEl = document.getElementById('slide-counter');
-
-  function updateSlideDisplay() {
-    tutorSlides.forEach((slide, idx) => {
-      slide.classList.toggle('active', idx === currentSlide);
-    });
-    const currentNum = String(currentSlide + 1).padStart(2, '0');
-    const totalNum = String(tutorSlides.length).padStart(2, '0');
-    if (counterEl) counterEl.textContent = `${currentNum} / ${totalNum}`;
-  }
-
-  function nextTutor() {
-    currentSlide = (currentSlide + 1) % tutorSlides.length;
-    updateSlideDisplay();
-  }
-
-  function prevTutor() {
-    currentSlide = (currentSlide - 1 + tutorSlides.length) % tutorSlides.length;
-    updateSlideDisplay();
-  }
-</script>
-
-</body>
-</html>
